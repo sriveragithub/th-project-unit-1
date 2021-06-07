@@ -8,6 +8,7 @@ const quotes = [
     quote:
       "For small creatures such as we the vastness is bearable only through love.",
     source: "Carl Sagan",
+    tag: "Awe-inspiring",
   },
   {
     quote:
@@ -32,6 +33,7 @@ const quotes = [
     quote:
       "We live in a society exquisitely dependent on science and technology, in which hardly anyone knows anything about science and technology.",
     source: "Carl Sagan",
+    tag: "Awe-inspiring",
   },
   {
     quote:
@@ -72,8 +74,11 @@ function printQuote() {
   if (quoteObj.year) {
     html += `<span class="year">${quoteObj.year}</span>`;
   }
+  if (quoteObj.tag) {
+    html += `<span class="year">${quoteObj.tag}</span>`;
+  }
   html += `</p>`;
-  document.getElementById('quote-box').innerHTML = html
+  document.getElementById("quote-box").innerHTML = html;
 }
 
 // finally, the #load-quote button is selected and an on-click is attached that will trigger printQuote when it is clicked.
