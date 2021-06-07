@@ -56,13 +56,17 @@ const quotes = [
   },
 ];
 
-// getRandomQuote generates a random number based on the length of the arr parameter given to the function. This lets us grab a random quote from our quotes array to display on the webpage.
+// getRandomQuote generates a random number based on the length of the arr
+// parameter given to the function. This lets us grab a random quote from
+// our quotes array to display on the webpage.
 function getRandomQuote(arr) {
   let randomNum = Math.floor(Math.random() * arr.length);
   return arr[randomNum];
 }
 
-// getRandomColor creates a function that returns a random number between 0 and 255. This function is then used in the return statement of getRandomColor to set the rgb(x,x,x) values necessary to change a color.
+// getRandomColor creates a function that returns a random number between
+// 0 and 255. This function is then used in the return statement of getRandomColor
+// to set the rgb(x,x,x) values necessary to change a color.
 function getRandomColor() {
   const randomRBG = () => {
     return Math.floor(Math.random() * 255);
@@ -70,7 +74,12 @@ function getRandomColor() {
   return `rgb(${randomRBG()},${randomRBG()},${randomRBG()})`;
 }
 
-// printQuote selects a random quote using the getRandomQuote function in conjunction with the array passed in the parameter. This random quote is then broken out into an html template literal string. This html string is then set to the #quote-box div using DOM manipulation. Then the document body is called to set the background color style equal to return of calling getRandomColor() which changes the background color.
+// printQuote selects a random quote using the getRandomQuote function in
+// conjunction with the array passed in the parameter. This random quote is
+// then broken out into an html template literal string. This html string is
+// then set to the #quote-box div using DOM manipulation. Then the document body
+// is called to set the background color style equal to return of calling
+// getRandomColor() which changes the background color.
 function printQuote() {
   let quoteObj = getRandomQuote(quotes);
   let html = `
@@ -90,12 +99,14 @@ function printQuote() {
   document.body.style.backgroundColor = getRandomColor();
 }
 
-// setInterval calls an anonymous function every 15 seconds that calls printQuote() to get a new background color and new quote html to appear on the webpage.
+// setInterval calls an anonymous function every 15 seconds that calls printQuote()
+// to get a new background color and new quote html to appear on the webpage.
 setInterval(function () {
   printQuote()
 }, 15000);
 
-// Finally, the #load-quote button is selected and an on-click is attached that will trigger printQuote when it is clicked.
+// Finally, the #load-quote button is selected and an on-click is attached
+// that will trigger printQuote when it is clicked.
 document
   .getElementById("load-quote")
   .addEventListener("click", printQuote, false);
