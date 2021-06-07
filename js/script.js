@@ -2,53 +2,53 @@
 const quotes = [
   {
     quote: "Somewhere, something incredible is waiting to be known.",
-    author: "Carl Sagan",
+    source: "Carl Sagan",
   },
   {
     quote:
       "For small creatures such as we the vastness is bearable only through love.",
-    author: "Carl Sagan",
+    source: "Carl Sagan",
   },
   {
     quote:
       "If you want to make an apple pie from scratch, you must first create the universe.",
-    author: "Carl Sagan",
+    source: "Carl Sagan",
   },
   {
     quote: `We're made of star stuff. We are a way for the cosmos to know itself.`,
-    author: "Carl Sagan",
+    source: "Carl Sagan",
   },
   {
     quote:
       "Science is not only compatible with spirituality; it is a profound source of spirituality.",
-    author: "Carl Sagan",
+    source: "Carl Sagan",
   },
   {
     quote:
       "For me, it is far better to grasp the Universe as it really is than to persist in delusion, however satisfying and reassuring.",
-    author: "Carl Sagan",
+    source: "Carl Sagan",
   },
   {
     quote:
       "We live in a society exquisitely dependent on science and technology, in which hardly anyone knows anything about science and technology.",
-    author: "Carl Sagan",
+    source: "Carl Sagan",
   },
   {
     quote:
       "Imagination will often carry us to worlds that never were. But without it we go nowhere.",
-    author: "Carl Sagan",
+    source: "Carl Sagan",
   },
   {
     quote:
       "Every one of us is, in the cosmic perspective, precious. If a human disagrees with you, let him live. In a hundred billion galaxies, you will not find another.",
-    author: "Carl Sagan",
+    source: "Carl Sagan",
     citation: "Cosmos",
     year: 1980,
   },
   {
     quote:
       "We are like butterflies who flutter for a day and think it is forever.",
-    author: "Carl Sagan",
+    source: "Carl Sagan",
     citation: "Cosmos",
     year: 1980,
   },
@@ -65,7 +65,7 @@ function printQuote() {
   let quoteObj = getRandomQuote(quotes);
   let html = `
     <p class="quote">${quoteObj.quote}</p>
-    <p class="source">${quoteObj.author}`;
+    <p class="source">${quoteObj.source}`;
   if (quoteObj.citation) {
     html += `<span class="citation">${quoteObj.citation}</span>`;
   }
