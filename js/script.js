@@ -62,7 +62,15 @@ function getRandomQuote(arr) {
   return arr[randomNum];
 }
 
-// printQuote selects a random quote using the getRandomQuote function in conjunction with the array passed in the parameter. This random quote is then broken out into an html template literal string. This html string is then set to the #quote-box div using DOM manipulation
+// getRandomColor creates a function that returns a random number between 0 and 255. This function is then used in the return statement of getRandomColor to set the rgb(x,x,x) values necessary to change a color
+function getRandomColor() {
+  const randomRBG = () => {
+    return Math.floor(Math.random() * 255);
+  }
+  return `rgb(${randomRBG()},${randomRBG()},${randomRBG()})`
+}
+
+// printQuote selects a random quote using the getRandomQuote function in conjunction with the array passed in the parameter. This random quote is then broken out into an html template literal string. This html string is then set to the #quote-box div using DOM manipulation. Then the document body is called to set the background color style equal to return of calling getRandomColor() which changes the background color
 function printQuote() {
   let quoteObj = getRandomQuote(quotes);
   let html = `
@@ -79,6 +87,7 @@ function printQuote() {
   }
   html += `</p>`;
   document.getElementById("quote-box").innerHTML = html;
+  document.body.style.backgroundColor = getRandomColor()
 }
 
 // finally, the #load-quote button is selected and an on-click is attached that will trigger printQuote when it is clicked.
